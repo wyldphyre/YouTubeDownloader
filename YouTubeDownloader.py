@@ -55,8 +55,11 @@ def youtubedownloader():
             file_path = os.path.join(queue_path, filename)
 
             if filename.endswith('queue'):
-                process_file(file_path)
-                os.rename(file_path, file_path.replace('.queue', '.handled'))
+                try:
+                    process_file(file_path)
+                    os.rename(file_path, file_path.replace('.queue', '.handled'))
+                except:
+                    os.rename(file_path, file_path.replace('.queue', '.failed'))
 
         directory_list = os.listdir(queue_path)
         queue_files = [file.rstrip('\n') for file in directory_list if file.endswith('.queue')]

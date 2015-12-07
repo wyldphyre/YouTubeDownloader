@@ -34,7 +34,8 @@ def process_file(file_path):
 
         if len(lines) > 0:
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([lines[0]])
+                for line in lines:
+                    ydl.download([line])
 
 
 def youtubedownloader():

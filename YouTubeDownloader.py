@@ -15,7 +15,7 @@ class Logger(object):
 
     def debug(self, msg):
         if '[download]' in msg and 'ETA' not in msg:
-            self.log_file.write(msg)
+            self.log_file.write(msg + '\n')
 
     def warning(self, msg):
         self.log_file.write(msg + '\n')

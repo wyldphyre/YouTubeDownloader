@@ -31,7 +31,7 @@ def progress_hook(d):
 
 def process_file(file_path, logger):
     ydl_opts = {
-        'outtmpl': '~/Movies/YouTubeDownloads/%(uploader)s/%(title)s.%(ext)s',
+        'outtmpl': '~/Movies/YouTubeDownloads/[%(uploader)s] %(title)s.%(ext)s',
         'logger': logger
     }
 
